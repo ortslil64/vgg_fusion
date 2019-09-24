@@ -210,7 +210,7 @@ class cifar100vgg:
 if __name__ == '__main__':
     (x_train, y_train), (x_test, y_test) = cifar100.load_data()
     x_train = x_train.astype('float32')
-    x_test = x_test.astype('float32')
+    #x_test = x_test.astype('float32')
 
     y_train = keras.utils.to_categorical(y_train, 100)
     y_test = keras.utils.to_categorical(y_test, 100)
@@ -230,7 +230,7 @@ if __name__ == '__main__':
     predicted_x = []
     standalone_err = []
     for ii in range(Nm):
-        model_temp = cifar100vgg(train = False, model_name= 'cifar100vgg'+str(ii)+'.h5')
+        model_temp = cifar100vgg(train = True, model_name= 'cifar100vgg'+str(ii)+'.h5')
         models.append(model_temp)
         predicted_x.append(models[ii].predict(test_data[ii]))
         residuals = (np.argmax(predicted_x[ii],1)!=np.argmax(y_test,1))
