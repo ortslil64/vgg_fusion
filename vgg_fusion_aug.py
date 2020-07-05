@@ -215,13 +215,7 @@ if __name__ == '__main__':
     y_train = keras.utils.to_categorical(y_train, 100)
     y_test = keras.utils.to_categorical(y_test, 100)
     Nm = 5
-    
-#    seq = iaa.Sequential([
-#    iaa.Affine(rotate=(-5, 5)),
-#    iaa.AdditiveGaussianNoise(scale=(0, 1)),
-#    iaa.Fliplr(0.5),
-#    iaa.GaussianBlur(sigma=(0, 1.0)),
-#    iaa.Crop(percent=(0, 0.2))], random_order=True)
+
     
     seq = iaa.Sequential([
     iaa.Crop(percent=(0, 0.2)),
@@ -240,7 +234,7 @@ if __name__ == '__main__':
     predicted_x = []
     standalone_err = []
     for ii in range(Nm):
-        model_temp = cifar100vgg(train = False, model_name= 'cifar100vgg'+str(ii)+'.h5')
+        model_temp = cifar100vgg(train = False, model_name= 'weights/cifar100vgg'+str(ii)+'.h5')
         models.append(model_temp)
         predicted_x.append(models[ii].predict(test_data[ii]))
         residuals = (np.argmax(predicted_x[ii],1)!=np.argmax(y_test,1))

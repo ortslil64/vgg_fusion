@@ -223,7 +223,7 @@ if __name__ == '__main__':
         predicted_x = []
         standalone_err = []
         for ii in range(Nm):
-            models=cifar100vgg(train = True, model_name= 'cifar100vgg'+str(ii)+'.h5', ns = samples[jj])
+            models=cifar100vgg(train = True, model_name= 'weights/cifar100vgg'+str(ii)+'.h5', ns = samples[jj])
             predicted_x.append(models.predict(x_test))
             residuals = (np.argmax(predicted_x[ii],1)!=np.argmax(y_test,1))
             loss = sum(residuals)/len(residuals)
