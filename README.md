@@ -3,7 +3,7 @@ By Or Tslil, Nadav Leherer and Avishy Carmi
 
 ## Algorithm
 This package demonstrates the application of recursive Chernoff fusion for classifiers ensemble.
-For technical details refer to [1], which is currently under review.
+For technical details refer to [1].
 
 ## Dependencies
 * keras
