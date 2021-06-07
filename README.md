@@ -16,5 +16,5 @@ For technical details refer to [1], which is currently under review.
 * The fusion scheme, presented in [1] are implemented in '''fusion_utils.py'''.
 
 ## Referance
-[1] "Approaches to generalized Chernoff fusion with applications to distributed estimation".
+[1] O. Tslil, N. Lehrer, A. Carmi, "Approaches to Chernoff fusion with applications to distributed estimation", Elsevier Digital Signal Processing, 107, 102877, 12/2020.
 
